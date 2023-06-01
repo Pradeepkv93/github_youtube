@@ -14,5 +14,18 @@ pipeline
       }
    
 }
+  
+  post{
+    success{
+      archiveArtifacts artifacts: env.WORKSPACE, followSymlinks: false
+    }
+    failure{
+      sh "date"
+    }
+    always{
+      sh "ifconfig enp0s3"
+    }
+  }
 }
+
 

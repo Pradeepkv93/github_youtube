@@ -8,7 +8,8 @@ pipeline
       }
       stage('B')
       {
-        echo env.WORKSPACE
+        steps{
+          echo env.WORKSPACE}
       }
     
   }
